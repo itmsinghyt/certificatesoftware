@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Character \u0026 Transfer Certificate Generator (प्रमाणपत्र निर्माण प्रणाली)",
+  "description": "विद्यालय तथा क्याम्पसका लागि चारित्रिक तथा स्थानान्तरण प्रमाणपत्र बनाउने र सुरक्षित डेटा ब्याकअप राख्ने स्थानीय प्रणाली।",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

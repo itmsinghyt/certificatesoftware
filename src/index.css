@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+/* Custom Sleek Scrollbar for Content Area and Dialogs */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+html.dark * {
+  scrollbar-color: #334155 #0f172a;
+}
+
+/* Smooth Touch & Content Scrolling on Mobile & Tablets */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Certificate Guilloche and Ornamental Border Styles */
+.certificate-frame {
+  box-shadow: inset 0 0 0 2px #b48328, inset 0 0 0 5px #fef9c3, inset 0 0 0 8px #b48328;
+}
+
+.certificate-frame-navy {
+  box-shadow: inset 0 0 0 2px #1e3a8a, inset 0 0 0 5px #e0e7ff, inset 0 0 0 8px #1e3a8a;
+}
+
+.certificate-frame-emerald {
+  box-shadow: inset 0 0 0 2px #065f46, inset 0 0 0 5px #d1fae5, inset 0 0 0 8px #065f46;
+}
+
+.certificate-frame-burgundy {
+  box-shadow: inset 0 0 0 2px #831843, inset 0 0 0 5px #fce7f3, inset 0 0 0 8px #831843;
+}
+
+/* Chandrodaya Authentic Red Guilloche / Woven Patterned Frame */
+.certificate-frame-chandrodaya {
+  border: 14px solid #dc2626;
+  border-image: repeating-linear-gradient(
+    45deg,
+    #dc2626 0px,
+    #dc2626 3px,
+    #ffffff 3px,
+    #ffffff 5px,
+    #b91c1c 5px,
+    #b91c1c 8px,
+    #fca5a5 8px,
+    #fca5a5 10px
+  ) 14;
+  outline: 2px solid #000000;
+  outline-offset: -1px;
+  box-shadow: inset 0 0 0 2px #000000;
+}
+
+/* Print Optimization Rules */
+@media print {
+  body {
+    background: transparent !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    display: block !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* Multi-page batch printing page breaks */
+  .batch-print-item {
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .batch-print-item:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* Orientation Print Rules */
+  body.print-mode-landscape @page {
+    size: A4 landscape;
+    margin: 6mm;
+  }
+
+  body.print-mode-portrait @page {
+    size: A4 portrait;
+    margin: 6mm;
+  }
+
+  @page {
+    margin: 6mm;
+  }
+}
